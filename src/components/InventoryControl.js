@@ -1,12 +1,15 @@
 import React from "react";
 import StockList from "./StockList";
 import { v4 } from 'uuid';
+import NewStockItemForm from "./NewStockItemForm";
 
 class InventoryControl extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
+      newItemFormVOP: false,
+      itemDetailVOP: false,
       selectedId: null,
       mainInventoryList: [
         {
@@ -41,9 +44,24 @@ class InventoryControl extends React.Component {
     };
   }
 
+  handleNewItemClick = () => {
+      this.setState(prevState => ({ newItemFormVOP: !prevState.newItemFormVOP }));
+  }
+
+  handleAddingNewStockItemToInventory = (newInventory) => {
+    const newMainInventoryList = this.state.mainInventoryList.concat(newInventory);
+    this.setState({
+      mainInventoryList: newMainInventoryList,
+      newItemFormVOP: false
+    });
+  };
+
   render() {
     let currentlyVisibleState = null;
-    let buttonText = "New Stock Item";
+
+    if (this.state.newItemFormVOP) {
+      currentlyVisibleState = <NewStockItemForm onNewInventoryCreation={this.handleAddingNewStockItemToInventory}/>
+    } else {
     currentlyVisibleState = (
       <>
         <StockList
@@ -52,10 +70,10 @@ class InventoryControl extends React.Component {
           itemsInStock={this.state.mainInventoryList}
         />
         <div>
-          <button>{buttonText}</button>
+          <button onClick={this.handleNewItemClick}>New Stock Item</button>
         </div>
       </>)
-
+    }
     return (
       <React.Fragment>
         {currentlyVisibleState}
