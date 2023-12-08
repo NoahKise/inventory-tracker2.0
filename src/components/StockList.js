@@ -11,6 +11,8 @@ function StockList(props){
           imgSrc={item.imgSrc}
           name={item.name}
           price={item.price}
+          releaseDate={item.releaseDate}
+          description={item.description}
           leftInStock={item.leftInStock}
           id={item.id}
           update={props.handleUpdate}
