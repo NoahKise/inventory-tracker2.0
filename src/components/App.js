@@ -1,11 +1,13 @@
 import React from "react";
 import Header from "./Header";
+import InventoryControl from "./InventoryControl";
 import '../App.css';
 
 function App(){
   return ( 
     <React.Fragment>
       <Header />
+      <InventoryControl />
     </React.Fragment>
   );
 }
