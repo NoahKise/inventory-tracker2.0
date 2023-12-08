@@ -9,6 +9,7 @@ function NewStockItemForm(props) {
       name: e.target.name.value,
       price: e.target.price.value,
       leftInStock: e.target.leftInStock.value,
+      imgSrc: e.target.imgSrc.value,
       releaseDate: e.target.releaseDate.value,
       description: e.target.description.value,
       id: v4()
@@ -29,6 +30,10 @@ function NewStockItemForm(props) {
           type='text'
           name="leftInStock"
           placeholder='Starting Inventory Amount' />
+        <input
+          type='text'
+          name='imgSrc'
+          placeholder='Image Link' />
         <input
           type='text'
           name='releaseDate'
