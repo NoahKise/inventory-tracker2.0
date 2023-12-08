@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-12-08T17:09:42.380Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="PqfPFkLSMrIqQart5MDk" version="22.1.7" type="github">
+<mxfile host="app.diagrams.net" modified="2023-12-08T17:29:14.539Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36" etag="NHKpM6oM07mlh0Zl3o6Q" version="22.1.7" type="github">
   <diagram name="Page-1" id="FDXaYBwRhG_A8-mdK8wv">
     <mxGraphModel dx="794" dy="419" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -37,7 +37,7 @@
         <mxCell id="TWeQiFtrZ5BaUIxIDIPl-13" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;Stock Item&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="50" y="300" width="220" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="TWeQiFtrZ5BaUIxIDIPl-16" value="&lt;font style=&quot;&quot;&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;NewStockItemForm&lt;/font&gt;&lt;br&gt;&lt;br&gt;This will contain a form field for each of the selected item&#39;s properties, with the displayed value corresponding to its current state.&amp;nbsp; They will be editable and will update when the user clicks the update button.&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
+        <mxCell id="TWeQiFtrZ5BaUIxIDIPl-16" value="&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 20px;&quot;&gt;StockItemDetail&lt;/span&gt;&lt;br&gt;This will contain a form field for each of the selected item&#39;s properties, with the displayed value corresponding to its current state.&amp;nbsp; They will be editable and will update when the user clicks the update button.&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
           <mxGeometry x="540" y="180" width="240" height="220" as="geometry" />
         </mxCell>
         <mxCell id="TWeQiFtrZ5BaUIxIDIPl-17" value="&lt;font style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 14px;&quot;&gt;Update Item&lt;/span&gt;&lt;br&gt;&lt;font style=&quot;font-size: 8px;&quot;&gt;Clicking this will update the item&#39;s properties to the input values and return to displaying StockList&lt;/font&gt;&lt;br&gt;&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;" vertex="1" parent="1">
