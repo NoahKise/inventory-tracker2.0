@@ -23,7 +23,7 @@ function StockItem({ name, price, releaseDate, imgSrc, leftInStock, description,
       <p>Left in Stock: {stockRemaining}</p>
       <p><em>Release Date: {releaseDate}</em></p>
       <p>{description}</p>
-      <button onClick={handleSellClick}>Sell a Pack</button>
+      <button onClick={handleSellClick}>Sell One Unit</button>
       <button onClick={handleUpdateClick}>Edit Item</button>
       <hr />
     </div>

@@ -17,30 +17,37 @@ function NewStockItemForm(props) {
   }
   return (
     <React.Fragment>
+      <h2>Add New Item to Inventory</h2>
       <form onSubmit={handleNewStockItemFormSubmission}>
         <input
           type='text'
           name='name'
           placeholder='Item Name' />
+          <br></br>
         <input
           type='text'
           name='price'
           placeholder='Price' />
+          <br></br>
         <input
           type='text'
           name="leftInStock"
           placeholder='Starting Inventory Amount' />
+          <br></br>
         <input
           type='text'
           name='imgSrc'
           placeholder='Image Link' />
+          <br></br>
         <input
           type='text'
           name='releaseDate'
           placeholder='Release Date' />
+          <br></br>
         <textarea
           name='description'
           placeholder='Product Description' />
+          <br></br>
         <button type='submit'>Add to Inventory</button>
       </form>
     </React.Fragment>
