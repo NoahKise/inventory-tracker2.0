@@ -6,10 +6,10 @@ function StockItemDetail(props) {
   function handleStockItemDetailSubmission(e) {
     e.preventDefault();
     const itemId = e.target.id.value;
-    props.onItemEdit({ 
+    props.onItemEdit({
       name: e.target.name.value,
       price: e.target.price.value,
-      leftInStock: e.target.leftInStock.value,
+      leftInStock: parseInt(e.target.leftInStock.value),
       imgSrc: e.target.imgSrc.value,
       releaseDate: e.target.releaseDate.value,
       description: e.target.description.value,
@@ -20,35 +20,43 @@ function StockItemDetail(props) {
     <React.Fragment>
       <h2>Currently Viewing / Editing <em>"{selectedDetails.name}"</em></h2>
       <form onSubmit={handleStockItemDetailSubmission}>
+        <label>Name: </label>
         <input
           type='text'
           name='name'
-          placeholder={selectedDetails.name} />
-          <br></br>
+          value={selectedDetails.name} />
+        <br></br>
+        <label>Price: </label>
         <input
           type='text'
           name='price'
-          placeholder={selectedDetails.price} />
-          <br></br>
+          value={selectedDetails.price} />
+        <br></br>
+        <label>Left in Stock: </label>
         <input
-          type='text'
+          type='number'
           name="leftInStock"
-          placeholder={selectedDetails.leftInStock} />
-          <br></br>
+          value={selectedDetails.leftInStock} />
+        <br></br>
+        <label>Image Source: </label>
         <input
           type='text'
           name='imgSrc'
-          placeholder={selectedDetails.imgSrc} />
-          <br></br>
+          value={selectedDetails.imgSrc} />
+        <br></br>
+        <label>Release Date: </label>
         <input
           type='text'
           name='releaseDate'
-          placeholder={selectedDetails.releaseDate} />
-          <br></br>
+          value={selectedDetails.releaseDate} />
+        <br></br>
+        <label>Description:</label>
+        <br></br>
         <textarea
+          rows="4" cols="50"
           name='description'
-          placeholder={selectedDetails.description} />
-          <br></br>
+          value={selectedDetails.description} />
+        <br></br>
         <button type='submit'>Save Changes</button>
       </form>
     </React.Fragment>
