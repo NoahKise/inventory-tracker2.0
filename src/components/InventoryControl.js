@@ -92,7 +92,14 @@ class InventoryControl extends React.Component {
     if (this.state.newItemFormVOP) {
       currentlyVisibleState = <NewStockItemForm onNewInventoryCreation={this.handleAddingNewStockItemToInventory}/>
     } else if (this.state.itemDetailVOP) {
-      currentlyVisibleState = <StockItemDetail onItemEdit={this.handleEditingItem}/>
+      const selectedItem = this.state.mainInventoryList.find(
+        (item) => item.id === this.state.selectedId
+      );
+      currentlyVisibleState = <StockItemDetail
+      onItemEdit={this.handleEditingItem}
+      selectedItemId={this.state.selectedId}
+      selectedDetails={selectedItem}
+    />
     } else currentlyVisibleState = (
       <>
         <StockList
