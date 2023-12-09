@@ -18,46 +18,48 @@ function NewStockItemForm(props) {
 
   return (
     <React.Fragment>
-      <h2>Add New Item to Inventory</h2>
-      <form onSubmit={handleNewStockItemFormSubmission}>
-        <label>Name: </label>
-        <input
-          type='text'
-          name='name'
-          placeholder='Item Name' />
-        <br></br>
-        <label>Price: </label>
-        <input
-          type='text'
-          name='price'
-          placeholder='Price' />
-        <br></br>
-        <label>Left in Stock: </label>
-        <input
-          type='number'
-          name="leftInStock"
-          placeholder='1' />
-        <br></br>
-        <label>Image Source: </label>
-        <input
-          type='text'
-          name='imgSrc'
-          placeholder='Image Link' />
-        <br></br>
-        <label>Release Date: </label>
-        <input
-          type='text'
-          name='releaseDate'
-          placeholder='Release Date' />
-        <br></br>
-        <label>Description:</label>
-        <br></br>
-        <textarea
-          name='description'
-          placeholder='Product Description' />
-        <br></br>
-        <button type='submit'>Add to Inventory</button>
-      </form>
+      <div className='input-form'>
+        <h2>Add New Item to Inventory</h2>
+        <form onSubmit={handleNewStockItemFormSubmission}>
+          <label>Name: </label>
+          <input
+            type='text'
+            name='name'
+            placeholder='Item Name' />
+          <br></br>
+          <label>Price: </label>
+          <input
+            type='text'
+            name='price'
+            placeholder='Price' />
+          <br></br>
+          <label>Left in Stock: </label>
+          <input
+            type='number'
+            name="leftInStock"
+            placeholder='1' />
+          <br></br>
+          <label>Image Source: </label>
+          <input
+            type='text'
+            name='imgSrc'
+            placeholder='Image Link' />
+          <br></br>
+          <label>Release Date: </label>
+          <input
+            type='text'
+            name='releaseDate'
+            placeholder='Release Date' />
+          <br></br>
+          <label>Description:</label>
+          <br></br>
+          <textarea
+            name='description'
+            placeholder='Product Description' />
+          <br></br>
+          <button type='submit'>Add to Inventory</button>
+        </form>
+      </div>
     </React.Fragment>
   );
 }
