@@ -14,6 +14,7 @@ function StockList(props){
           releaseDate={item.releaseDate}
           description={item.description}
           leftInStock={item.leftInStock}
+          handleSell={() => props.handleSell(item.id)} 
           id={item.id}
           update={props.handleUpdate}
           key={index}/>
