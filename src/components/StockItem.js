@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-function StockItem({ name, price, releaseDate, imgSrc, leftInStock, description, update, id, addToCart }) {
+function StockItem({ name, price, releaseDate, imgSrc, leftInStock, description, update, id }) {
   const [stockRemaining, setStockRemaining] = useState(leftInStock);
 
   const handleSellClick = () => {
     if (stockRemaining > 0) {
       setStockRemaining(s => s - 1);
-      // addToCart(name, price, id);
     } else {
     }
   };
@@ -36,6 +35,8 @@ StockItem.propTypes = {
   id: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   releaseDate: PropTypes.string.isRequired,
+  imgSrc: PropTypes.string,
+  leftInStock: PropTypes.string.isRequired
 };
 
 export default StockItem;

@@ -2,6 +2,7 @@ import React from "react";
 import StockList from "./StockList";
 import { v4 } from 'uuid';
 import NewStockItemForm from "./NewStockItemForm";
+import StockItemDetail from "./StockItemDetail";
 
 class InventoryControl extends React.Component {
 
@@ -56,13 +57,43 @@ class InventoryControl extends React.Component {
     });
   };
 
+  handleEditingItem = (updatedInventory) => {
+    const updatedList = this.state.mainInventoryList.map(item => {
+      if (item.id === this.state.selectedId) {
+        return {
+          ...item,
+          name: updatedInventory.name,
+          price: updatedInventory.price,
+          leftInStock: updatedInventory.leftInStock,
+          releaseDate: updatedInventory.releaseDate,
+          description: updatedInventory.description,
+          imgSrc: updatedInventory.imgSrc
+        };
+      }
+      return item;
+    });
+
+    this.setState({
+      mainInventoryList: updatedList,
+      itemDetailVOP: false
+    });
+  };
+
+  handleUpdateClick = (id) => {
+    this.setState(prevState => ({
+      itemDetailVOP: !prevState.itemDetailVOP,
+      selectedId: id
+    }));
+  };
+
   render() {
     let currentlyVisibleState = null;
 
     if (this.state.newItemFormVOP) {
       currentlyVisibleState = <NewStockItemForm onNewInventoryCreation={this.handleAddingNewStockItemToInventory}/>
-    } else {
-    currentlyVisibleState = (
+    } else if (this.state.itemDetailVOP) {
+      currentlyVisibleState = <StockItemDetail onItemEdit={this.handleEditingItem}/>
+    } else currentlyVisibleState = (
       <>
         <StockList
           addToCart={this.addToCart}
@@ -73,7 +104,6 @@ class InventoryControl extends React.Component {
           <button onClick={this.handleNewItemClick}>New Stock Item</button>
         </div>
       </>)
-    }
     return (
       <React.Fragment>
         {currentlyVisibleState}
