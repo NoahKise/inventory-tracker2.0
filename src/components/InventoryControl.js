@@ -17,7 +17,7 @@ class InventoryControl extends React.Component {
           name: 'The Lost Caverns of Ixilan',
           price: '$6',
           releaseDate: 'November 17th, 2023',
-          description: "In The Lost Caverns of Ixalan, your players will face an adventure like never before, discovering long-lost ruins, ancient civilizations alive and well, and fan-favorite creatures running rampant. Dig into the heart of Ixalan with a piece of prehistory for every play style.Set Boosters are the best packs to open just for fun, containing gorgeous art cards and the opportunity to explore the set. Contents: 12 Magic: The Gathering cards per booster, 1-4 cards of rarity Rare or higher in every pack, 1 Art Card (foil-stamped Signature Art Card replaces the Art Card in 10% of Boosters), Uncommon cards, 3-7 Common cards, 1 Land card (Traditional Foil in 20% of packs, Full-Art Land in 30% of Boosters), 1 Traditional Foil card, 1 token/ad card, Helper card, or a special card from Magic's history—found in 25% of packs.",
+          description: "In The Lost Caverns of Ixalan, your players will face an adventure like never before, discovering long-lost ruins, ancient civilizations alive and well, and fan-favorite creatures running rampant. Dig into the heart of Ixalan with a piece of prehistory for every play style. Set Boosters are the best packs to open just for fun, containing gorgeous art cards and the opportunity to explore the set. Contents: 12 Magic: The Gathering cards per booster, 1-4 cards of rarity Rare or higher in every pack, 1 Art Card (foil-stamped Signature Art Card replaces the Art Card in 10% of Boosters), 3-7 Uncommon cards, 3-7 Common cards, 1 Land card (Traditional Foil in 20% of packs, Full-Art Land in 30% of Boosters), 1 Traditional Foil card, 1 token/ad card, Helper card, or a special card from Magic's history—found in 25% of packs.",
           leftInStock: 30,
           imgSrc: "img/ixilan.webp",
           id: v4()
@@ -124,22 +124,26 @@ class InventoryControl extends React.Component {
       currentlyVisibleState = (
         <>
           <NewStockItemForm onNewInventoryCreation={this.handleAddingNewStockItemToInventory} />
-          <button onClick={this.handleReturnToInventoryClick}>Return to Inventory</button>
+          <div className="bottom-button">
+            <button onClick={this.handleReturnToInventoryClick}>Return to Inventory</button>
+          </div>
         </>)
     } else if (this.state.itemDetailVOP) {
       const selectedItem = this.state.mainInventoryList.find(
         (item) => item.id === this.state.selectedId
       );
       currentlyVisibleState = (
-      <>
-      <StockItemDetail
-        onItemEdit={this.handleEditingItem}
-        onDelete={this.handleDeleteItem}
-        selectedItemId={this.state.selectedId}
-        selectedDetails={selectedItem}
-      />
-      <button onClick={this.handleReturnToInventoryClick}>Return to Inventory</button>
-      </>)
+        <>
+          <StockItemDetail
+            onItemEdit={this.handleEditingItem}
+            onDelete={this.handleDeleteItem}
+            selectedItemId={this.state.selectedId}
+            selectedDetails={selectedItem}
+          />
+          <div className="bottom-button">
+            <button onClick={this.handleReturnToInventoryClick}>Return to Inventory</button>
+          </div>
+        </>)
     } else currentlyVisibleState = (
       <>
         <StockList
@@ -148,7 +152,7 @@ class InventoryControl extends React.Component {
           itemsInStock={this.state.mainInventoryList}
           handleSell={this.handleSellClick}
         />
-        <div>
+        <div className="bottom-button">
           <button onClick={this.handleNewItemClick}>New Stock Item</button>
         </div>
       </>)

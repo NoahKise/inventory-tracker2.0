@@ -2,22 +2,22 @@ import React from "react";
 import StockItem from "./StockItem";
 import PropTypes from 'prop-types';
 
-function StockList(props){
+function StockList(props) {
   return (
     <React.Fragment>
-      <hr/>
+      <hr />
       {props.itemsInStock.map((item, index) =>
-        <StockItem 
+        <StockItem
           imgSrc={item.imgSrc}
           name={item.name}
           price={item.price}
           releaseDate={item.releaseDate}
           description={item.description}
           leftInStock={item.leftInStock}
-          handleSell={() => props.handleSell(item.id)} 
+          handleSell={() => props.handleSell(item.id)}
           id={item.id}
           update={props.handleUpdate}
-          key={index}/>
+          key={index} />
       )}
     </React.Fragment>
   );
