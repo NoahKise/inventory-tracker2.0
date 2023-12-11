@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 function StockItem({ name, price, releaseDate, imgSrc, leftInStock, description, update, id, handleSell }) {

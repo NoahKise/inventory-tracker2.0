@@ -2,7 +2,7 @@
 
 #### By Noah Kise
 
-#### A web application to mangage the inventory for a fictional trading card game store.
+#### A web application to manage the inventory for a fictional trading card game store.
 
 ## Technologies Used
 
@@ -26,7 +26,7 @@ This is a web application that lets a shopkeeper manage their inventory of Magic
 
 ## Known Bugs
 
-* This project asks for local and shared state, but I could not think of a good use case for local state, since it seemed every meaningful instance of state needed to be accessed by other components to be functional.
+* The project requirements ask for instances of local and shared state, but I could not think of a good use case for local state, since it seemed every meaningful instance of state needed to be accessed by other components to be functional. Initially I had the number of stock remaining for an item stored locally in StockItem.js, but had to lift it up to InventoryControl.js in order for the stock remaining to not reset after adding or editing an item.
 
 ## License
 
