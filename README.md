@@ -16,6 +16,10 @@
 
 This is a web application that lets a shopkeeper manage their inventory of Magic the Gathering products.  They can see an inventory list of every product they have for sale, and use a button to display a form to add a new product to the list.  They can also view and edit the various details of any product, as well as decrement their stock of any individual item by clicking a sell button.
 
+## Component Diagram
+
+![component diagram](project-structure.drawio.png)
+
 ## Setup/Installation Requirements
 
 * To run this program locally on your own computer, enter git clone https://github.com/NoahKise/local-business-inventory-tracker in your terminal. Navigate into the project's root folder and run npm install.  Then, type npm run start to run the project on a local server.
