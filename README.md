@@ -18,7 +18,7 @@ This is a web application that lets a shopkeeper manage their inventory of Magic
 
 ## Component Diagram
 
-![component diagram](project-structure.drawio.png)
+![component diagram](public/img/project-structure.drawio.png)
 
 ## Setup/Installation Requirements
 
