@@ -106,8 +106,17 @@ class InventoryControl extends React.Component {
     if (this.state.newItemFormVOP) {
       this.setState(prevState => ({ newItemFormVOP: !prevState.newItemFormVOP }));
     } else this.setState(prevState => ({ itemDetailVOP: !prevState.itemDetailVOP }));
-
   }
+
+  handleDeleteItem = (itemId) => {
+    const updatedInventoryList = this.state.mainInventoryList.filter(item => item.id !== itemId);
+    this.setState({
+      mainInventoryList: updatedInventoryList,
+      itemDetailVOP: false,
+    });
+  };
+
+
   render() {
     let currentlyVisibleState = null;
 
@@ -125,6 +134,7 @@ class InventoryControl extends React.Component {
       <>
       <StockItemDetail
         onItemEdit={this.handleEditingItem}
+        onDelete={this.handleDeleteItem}
         selectedItemId={this.state.selectedId}
         selectedDetails={selectedItem}
       />

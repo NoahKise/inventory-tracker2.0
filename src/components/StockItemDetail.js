@@ -16,6 +16,11 @@ function StockItemDetail(props) {
       id: itemId
     });
   }
+
+  function handleDeleteItem() {
+    props.onDelete(selectedItemId);
+  }
+
   return (
     <React.Fragment>
       <div className='input-form'>
@@ -60,6 +65,7 @@ function StockItemDetail(props) {
           <br></br>
           <button type='submit'>Save Changes</button>
         </form>
+        <button onClick={handleDeleteItem}>Delete Item</button>
       </div>
     </React.Fragment>
   );
@@ -68,7 +74,8 @@ function StockItemDetail(props) {
 StockItemDetail.propTypes = {
   selectedItemId: PropTypes.string,
   selectedDetails: PropTypes.object,
-  onItemEdit: PropTypes.func
+  onItemEdit: PropTypes.func,
+  onDelete: PropTypes.func
 };
 
 export default StockItemDetail;
