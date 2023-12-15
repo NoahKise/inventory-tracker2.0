@@ -100,4 +100,36 @@ describe('mainInventoryListSliceReducer', () => {
       },
     ]);
   });
+
+  it('should handle editItem action', () => {
+    const newState = mainInventoryListSliceReducer(inventory, editItem({
+      name: 'The Lost Caverns of Ixilan',
+      price: '$6000',
+      releaseDate: 'November 17th, 2023',
+      description: "In The Lost Caverns of Ixalan, your players will face an adventure like never before, discovering long-lost ruins, ancient civilizations alive and well, and fan-favorite creatures running rampant. Dig into the heart of Ixalan with a piece of prehistory for every play style. Set Boosters are the best packs to open just for fun, containing gorgeous art cards and the opportunity to explore the set. Contents: 12 Magic: The Gathering cards per booster, 1-4 cards of rarity Rare or higher in every pack, 1 Art Card (foil-stamped Signature Art Card replaces the Art Card in 10% of Boosters), 3-7 Uncommon cards, 3-7 Common cards, 1 Land card (Traditional Foil in 20% of packs, Full-Art Land in 30% of Boosters), 1 Traditional Foil card, 1 token/ad card, Helper card, or a special card from Magic's history—found in 25% of packs.",
+      leftInStock: 29,
+      imgSrc: "img/ixilan.webp",
+      id: 1
+    }));
+    expect(newState).toEqual([
+      {
+        name: 'The Lost Caverns of Ixilan',
+        price: '$6000',
+        releaseDate: 'November 17th, 2023',
+        description: "In The Lost Caverns of Ixalan, your players will face an adventure like never before, discovering long-lost ruins, ancient civilizations alive and well, and fan-favorite creatures running rampant. Dig into the heart of Ixalan with a piece of prehistory for every play style. Set Boosters are the best packs to open just for fun, containing gorgeous art cards and the opportunity to explore the set. Contents: 12 Magic: The Gathering cards per booster, 1-4 cards of rarity Rare or higher in every pack, 1 Art Card (foil-stamped Signature Art Card replaces the Art Card in 10% of Boosters), 3-7 Uncommon cards, 3-7 Common cards, 1 Land card (Traditional Foil in 20% of packs, Full-Art Land in 30% of Boosters), 1 Traditional Foil card, 1 token/ad card, Helper card, or a special card from Magic's history—found in 25% of packs.",
+        leftInStock: 29,
+        imgSrc: "img/ixilan.webp",
+        id: 1
+      },
+      {
+        name: 'Wilds of Eldraine',
+        price: '$5',
+        releaseDate: 'September 8th, 2023',
+        description: "Eldraine is a plane of wonderful chaos and contradictions—your players will be invited to start their own storybook adventure, enveloped in a fantastical fairytale with a twist to break the curse of an endless slumber. Set Boosters are the best packs to open just for fun, containing gorgeous art cards and the opportunity to explore the set. Contents: 12 Magic: The Gathering cards per booster, 1-5 cards of rarity Rare or higher in every pack, 1 Art Card (foil-stamped Signature Art Card replaces the Art Card in 10% of Boosters), 3-7 Uncommon cards, 3-6 Common cards, 1 Land card (Traditional Foil in 20% of packs, Full-Art Land in 33% of Boosters), At least 1 special Borderless card of rarity Uncommon or higher, 1 Traditional Foil card, 1 token/ad card, Helper card, or card from 'The List' (a special card from Magic's history or Universes Within card—found in 25% of packs).",
+        leftInStock: 30,
+        imgSrc: "img/wilds-of-eldraine.webp",
+        id: 2
+      },
+    ])
+  })
 });
