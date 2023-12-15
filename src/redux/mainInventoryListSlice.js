@@ -46,7 +46,6 @@ const mainInventoryListSlice = createSlice({
         },
         deleteItem: (state, action) => {
           const itemIdToDelete = action.payload;
-          console.log(itemIdToDelete);
           return state.filter(item => item.id !== itemIdToDelete);
         },
         editItem: (state, action) => {

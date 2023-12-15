@@ -25,84 +25,37 @@ const InventoryControl = () => {
   const mainInventoryList = useSelector(mainInventoryListSelector);
 
   const handleNewItemClick = () => {
-    dispatch(setNewItemFormVOPTrue());  //this.setState(prevState => ({ newItemFormVOP: !prevState.newItemFormVOP }));
+    dispatch(setNewItemFormVOPTrue());
   }
 
   const handleAddingNewStockItemToInventory = (newInventory) => {
-    dispatch(addItem(newInventory))  //const newMainInventoryList = this.state.mainInventoryList.concat(newInventory);
+    dispatch(addItem(newInventory));
     dispatch(setNewItemFormVOPFalse());
-    // this.setState({
-    //   mainInventoryList: newMainInventoryList,
-    //   newItemFormVOP: false
-    // });
   };
 
   const handleEditingItem = (updatedInventory) => {
     dispatch(editItem(updatedInventory));
     dispatch(setitemDetailVOPFalse());
-
-    // const updatedList = this.state.mainInventoryList.map(item => {
-    //   if (item.id === this.state.selectedId) {
-    //     return {
-    //       ...item,
-    //       name: updatedInventory.name,
-    //       price: updatedInventory.price,
-    //       leftInStock: updatedInventory.leftInStock,
-    //       releaseDate: updatedInventory.releaseDate,
-    //       description: updatedInventory.description,
-    //       imgSrc: updatedInventory.imgSrc
-    //     };
-    //   }
-    //   return item;
-    // });
-
-    // this.setState({
-    //   mainInventoryList: updatedList,
-    //   itemDetailVOP: false
-    // });
   };
 
   const handleUpdateClick = (id) => {
     dispatch(setitemDetailVOPTrue());
     dispatch(currentId(id));
-    // this.setState(prevState => ({
-    //   itemDetailVOP: !prevState.itemDetailVOP,
-    //   selectedId: id
-    // }));
   };
 
   const handleSellClick = (id) => {
     dispatch(sellItem({ itemId: id}));
-    // const updatedList = this.state.mainInventoryList.map(item => {
-    //   if (item.id === id && item.leftInStock > 0) {
-    //     return {
-    //       ...item,
-    //       leftInStock: item.leftInStock - 1
-    //     };
-    //   }
-    //   return item;
-    // });
-
-    // this.setState({
-    //   mainInventoryList: updatedList
-    // });
   };
 
   const handleReturnToInventoryClick = () => {
     if (newItemFormVOP) {
-      dispatch(setNewItemFormVOPFalse());  //this.setState(prevState => ({ newItemFormVOP: !prevState.newItemFormVOP }));
-    } else dispatch(setitemDetailVOPFalse());  //this.setState(prevState => ({ itemDetailVOP: !prevState.itemDetailVOP }));
+      dispatch(setNewItemFormVOPFalse());
+    } else dispatch(setitemDetailVOPFalse());
   }
 
   const handleDeleteItem = (itemId) => {
-    console.log(itemId);
     dispatch(deleteItem(itemId));
     dispatch(setitemDetailVOPFalse())
-    // const updatedInventoryList = this.state.mainInventoryList.filter(item => item.id !== itemId);
-    // this.setState({
-    //   mainInventoryList: updatedInventoryList,
-    //   itemDetailVOP: false,
-    // });
   };
 
   let currentlyVisibleState = null;
