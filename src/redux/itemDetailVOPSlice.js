@@ -4,15 +4,15 @@ const itemDetailVOPSlice = createSlice({
     name: "itemDetailVOP",
     initialState: false,
     reducers: {
-        setitemDetailVOPTrue: (state, action) => {
+        setItemDetailVOPTrue: (state, action) => {
             return true;
         },
-        setitemDetailVOPFalse: (state, action) => {
+        setItemDetailVOPFalse: (state, action) => {
             return false;
         }
     }
 });
 
 export default itemDetailVOPSlice.reducer;
-export const { setitemDetailVOPTrue, setitemDetailVOPFalse } = itemDetailVOPSlice.actions;
+export const { setItemDetailVOPTrue, setItemDetailVOPFalse } = itemDetailVOPSlice.actions;
 export const itemDetailVOPSelector = (state) => state.itemDetailVOP;

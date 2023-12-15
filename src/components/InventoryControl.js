@@ -12,7 +12,7 @@ import { selectedIdSelector } from "../redux/selectedIdSlice";
 import { mainInventoryListSelector } from "../redux/mainInventoryListSlice";
 
 import { setNewItemFormVOPTrue, setNewItemFormVOPFalse } from "../redux/newItemFormVOPSlice";
-import { setitemDetailVOPTrue, setitemDetailVOPFalse } from "../redux/itemDetailVOPSlice";
+import { setItemDetailVOPTrue, setItemDetailVOPFalse } from "../redux/itemDetailVOPSlice";
 import { currentId } from "../redux/selectedIdSlice";
 import { addItem, sellItem, deleteItem, editItem } from "../redux/mainInventoryListSlice";
 
@@ -35,11 +35,11 @@ const InventoryControl = () => {
 
   const handleEditingItem = (updatedInventory) => {
     dispatch(editItem(updatedInventory));
-    dispatch(setitemDetailVOPFalse());
+    dispatch(setItemDetailVOPFalse());
   };
 
   const handleUpdateClick = (id) => {
-    dispatch(setitemDetailVOPTrue());
+    dispatch(setItemDetailVOPTrue());
     dispatch(currentId(id));
   };
 
@@ -50,12 +50,12 @@ const InventoryControl = () => {
   const handleReturnToInventoryClick = () => {
     if (newItemFormVOP) {
       dispatch(setNewItemFormVOPFalse());
-    } else dispatch(setitemDetailVOPFalse());
+    } else dispatch(setItemDetailVOPFalse());
   }
 
   const handleDeleteItem = (itemId) => {
     dispatch(deleteItem(itemId));
-    dispatch(setitemDetailVOPFalse())
+    dispatch(setItemDetailVOPFalse())
   };
 
   let currentlyVisibleState = null;
