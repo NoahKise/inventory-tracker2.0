@@ -3,10 +3,10 @@ import itemDetailVOPSliceReducer, { setItemDetailVOPTrue, setItemDetailVOPFalse 
 describe('itemDetailVOPSliceReducer', () => {
     it('should handle setItemDetailVOPTrue action', () => {
         const newState = itemDetailVOPSliceReducer(false, setItemDetailVOPTrue());
-        expect (newState).toEqual(true);
+        expect(newState).toEqual(true);
     });
     it('should handle setItemDetailVOPFalse action', () => {
         const newState = itemDetailVOPSliceReducer(true, setItemDetailVOPFalse());
-        expect (newState).toEqual(false);
+        expect(newState).toEqual(false);
     });
 });

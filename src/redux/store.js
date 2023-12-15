@@ -2,7 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import newItemFormVOPSliceReducer from "./newItemFormVOPSlice";
 import itemDetailVOPSliceReducer from "./itemDetailVOPSlice";
 import selectedIdSliceReducer from "./selectedIdSlice";
-import mainInventoryListSliceReducer from "./mainInventoryListSlice"; 
+import mainInventoryListSliceReducer from "./mainInventoryListSlice";
 
 export const store = configureStore({
   reducer: {

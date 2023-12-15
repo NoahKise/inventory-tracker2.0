@@ -44,7 +44,7 @@ const InventoryControl = () => {
   };
 
   const handleSellClick = (id) => {
-    dispatch(sellItem({ itemId: id}));
+    dispatch(sellItem({ itemId: id }));
   };
 
   const handleReturnToInventoryClick = () => {

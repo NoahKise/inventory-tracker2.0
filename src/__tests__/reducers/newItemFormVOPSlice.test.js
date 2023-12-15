@@ -3,10 +3,10 @@ import newItemFormVOPSliceReducer, { setNewItemFormVOPTrue, setNewItemFormVOPFal
 describe('newItemFormVOPSliceReducer', () => {
     it('should handle setNewItemFormVOPTrue action', () => {
         const newState = newItemFormVOPSliceReducer(false, setNewItemFormVOPTrue());
-        expect (newState).toEqual(true);
+        expect(newState).toEqual(true);
     });
     it('should handle setNewItemFormVOPFalse action', () => {
         const newState = newItemFormVOPSliceReducer(true, setNewItemFormVOPFalse());
-        expect (newState).toEqual(false);
+        expect(newState).toEqual(false);
     });
 });
