@@ -127,7 +127,7 @@ const InventoryControl = () => {
   } else currentlyVisibleState = (
     <>
       <StockList
-        handleUpdate={this.handleUpdateClick}
+        handleUpdate={handleUpdateClick}
         itemsInStock={mainInventoryList}
         handleSell={this.handleSellClick}
       />
