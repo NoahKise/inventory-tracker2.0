@@ -29,7 +29,8 @@ StockItem.propTypes = {
   releaseDate: PropTypes.string.isRequired,
   imgSrc: PropTypes.string,
   leftInStock: PropTypes.number.isRequired,
-  handleSell: PropTypes.func.isRequired
+  handleSell: PropTypes.func.isRequired,
+  update: PropTypes.func.isRequired,
 };
 
 export default StockItem;

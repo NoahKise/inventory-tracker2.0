@@ -41,7 +41,6 @@ class InventoryControl extends React.Component {
           id: v4()
         }
       ],
-      cartItems: []
     };
   }
 
