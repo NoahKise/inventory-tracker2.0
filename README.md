@@ -8,6 +8,7 @@
 
 * React
 * Redux
+* Redux Toolkit
 * HTML
 * CSS
 * JavaScript
