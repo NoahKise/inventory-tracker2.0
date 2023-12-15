@@ -3,7 +3,9 @@ body {
   background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 9%, rgba(54, 114, 255, 1) 25%, rgba(0, 0, 1, 1) 42%, rgba(0, 0, 0, 1) 50%, rgba(11, 2, 0, 1) 55%, rgba(253, 70, 40, 1) 77%, rgba(9, 232, 70, 1) 100%); */
   font-family: paradroid;
   color: bisque;
-  background-color: bisque;
+  background: rgb(0,0,0);
+  background: linear-gradient(0deg, rgba(0,0,0,1) 6%, rgba(255,228,196,1) 47%);
+  background-size: cover;
 }
 
 img {
@@ -86,4 +88,5 @@ h1 {
   width: 150px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 4vw;
 }
