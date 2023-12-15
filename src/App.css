@@ -1,12 +1,23 @@
 body {
-  background: rgb(255, 255, 255);
-  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 9%, rgba(54, 114, 255, 1) 25%, rgba(0, 0, 1, 1) 42%, rgba(0, 0, 0, 1) 50%, rgba(11, 2, 0, 1) 55%, rgba(253, 70, 40, 1) 77%, rgba(9, 232, 70, 1) 100%);
-  font-family: monospace;
+  /* background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 9%, rgba(54, 114, 255, 1) 25%, rgba(0, 0, 1, 1) 42%, rgba(0, 0, 0, 1) 50%, rgba(11, 2, 0, 1) 55%, rgba(253, 70, 40, 1) 77%, rgba(9, 232, 70, 1) 100%); */
+  font-family: paradroid;
   color: bisque;
+  background-color: bisque;
 }
 
 img {
   width: 230px;
+}
+
+@font-face {
+  font-family: ghibo;
+  src: url(../public/font/Ghibo-Talk.otf);
+}
+
+@font-face {
+  font-family: paradroid;
+  src: url(../public/font/ParadroidMono-Light.ttf);
 }
 
 #stockItem {
@@ -62,7 +73,7 @@ button:active {
 }
 
 h1 {
-  font-family: fantasy;
+  font-family: ghibo;
   background-color: rgb(36, 36, 36);
   width: fit-content;
   margin-left: auto;

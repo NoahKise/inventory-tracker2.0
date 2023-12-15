@@ -8,7 +8,7 @@ function StockItem({ name, price, releaseDate, imgSrc, leftInStock, description,
   };
 
   const stockStyle = {
-    color: leftInStock < 10 ? 'red' : 'inherit',
+    color: leftInStock < 11 ? 'red' : 'inherit',
   };
 
   return (
