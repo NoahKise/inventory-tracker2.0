@@ -98,50 +98,48 @@ const InventoryControl = () => {
     });
   };
 
-    let currentlyVisibleState = null;
+  let currentlyVisibleState = null;
 
-    if (this.state.newItemFormVOP) {
-      currentlyVisibleState = (
-        <>
-          <NewStockItemForm onNewInventoryCreation={this.handleAddingNewStockItemToInventory} />
-          <div className="bottom-button">
-            <button onClick={this.handleReturnToInventoryClick}>Return to Inventory</button>
-          </div>
-        </>)
-    } else if (this.state.itemDetailVOP) {
-      const selectedItem = this.state.mainInventoryList.find(
-        (item) => item.id === this.state.selectedId
-      );
-      currentlyVisibleState = (
-        <>
-          <StockItemDetail
-            onItemEdit={this.handleEditingItem}
-            onDelete={this.handleDeleteItem}
-            selectedItemId={this.state.selectedId}
-            selectedDetails={selectedItem}
-          />
-          <div className="bottom-button">
-            <button onClick={this.handleReturnToInventoryClick}>Return to Inventory</button>
-          </div>
-        </>)
-    } else currentlyVisibleState = (
+  if (newItemFormVOP) {
+    currentlyVisibleState = (
       <>
-        <StockList
-          addToCart={this.addToCart}
-          handleUpdate={this.handleUpdateClick}
-          itemsInStock={this.state.mainInventoryList}
-          handleSell={this.handleSellClick}
-        />
+        <NewStockItemForm onNewInventoryCreation={handleAddingNewStockItemToInventory} />
         <div className="bottom-button">
-          <button onClick={this.handleNewItemClick}>New Stock Item</button>
+          <button onClick={handleReturnToInventoryClick}>Return to Inventory</button>
         </div>
       </>)
-    return (
-      <React.Fragment>
-        {currentlyVisibleState}
-
-      </React.Fragment >
+  } else if (itemDetailVOP) {
+    const selectedItem = mainInventoryList.find(
+      (item) => item.id === selectedId
     );
+    currentlyVisibleState = (
+      <>
+        <StockItemDetail
+          onItemEdit={this.handleEditingItem}
+          onDelete={this.handleDeleteItem}
+          selectedItemId={selectedId}
+          selectedDetails={selectedItem}
+        />
+        <div className="bottom-button">
+          <button onClick={handleReturnToInventoryClick}>Return to Inventory</button>
+        </div>
+      </>)
+  } else currentlyVisibleState = (
+    <>
+      <StockList
+        handleUpdate={this.handleUpdateClick}
+        itemsInStock={mainInventoryList}
+        handleSell={this.handleSellClick}
+      />
+      <div className="bottom-button">
+        <button onClick={handleNewItemClick}>New Stock Item</button>
+      </div>
+    </>)
+  return (
+    <React.Fragment>
+      {currentlyVisibleState}
+    </React.Fragment >
+  );
 }
 
 export default InventoryControl;
