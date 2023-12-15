@@ -12,5 +12,5 @@ const selectedIdSlice = createSlice({
 });
 
 export default selectedIdSlice.reducer;
-export const { currentScore } = selectedIdSlice.actions;
+export const { currentId } = selectedIdSlice.actions;
 export const selectedIdSelector = (state) => state.selectedId;
