@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function StockItemDetail(props) {
-  const { selectedItemId, selectedDetails } = props;
+  const { selectedDetails } = props;
   const itemId = props.selectedItemId;
   function handleStockItemDetailSubmission(e) {
     e.preventDefault();
