@@ -14,7 +14,7 @@ import { mainInventoryListSelector } from "../redux/mainInventoryListSlice";
 import { setNewItemFormVOPTrue, setNewItemFormVOPFalse } from "../redux/newItemFormVOPSlice";
 import { setitemDetailVOPTrue, setitemDetailVOPFalse } from "../redux/itemDetailVOPSlice";
 import { currentId } from "../redux/selectedIdSlice";
-import { addItem } from "../redux/mainInventoryListSlice";
+import { addItem, sellItem, deleteItem, editItem } from "../redux/mainInventoryListSlice";
 
 const InventoryControl = () => {
 

@@ -36,10 +36,30 @@ const mainInventoryListSlice = createSlice({
         addItem: (state, action) => {
             state.push(action.payload)
         },
+        sellItem: (state, action) => {
+          const { itemId } = action.payload;
+          const itemToSell = state.mainInventoryList.find(item => item.id === itemId);
+    
+          if (itemToSell && itemToSell.leftInStock > 0) {
+            itemToSell.leftInStock -= 1;
+          }
+        },
+        deleteItem: (state, action) => {
+          const itemIdToDelete = action.payload;
+          state.mainInventoryList = state.mainInventoryList.filter(item => item.id !== itemIdToDelete);
+        },
+        editItem: (state, action) => {
+          const updatedItem = action.payload;
+          const index = state.mainInventoryList.findIndex(item => item.id === updatedItem.id);
+    
+          if (index !== -1) {
+            state.mainInventoryList[index] = updatedItem;
+          }
+        },
     }
 
 });
 
 export default mainInventoryListSlice.reducer;
-export const { addItem } = mainInventoryListSlice.actions;
+export const { addItem, sellItem, deleteItem, editItem } = mainInventoryListSlice.actions;
 export const mainInventoryListSelector = (state) => state.mainInventoryList;
