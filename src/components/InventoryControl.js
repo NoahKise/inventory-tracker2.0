@@ -38,25 +38,28 @@ const InventoryControl = () => {
   };
 
   const handleEditingItem = (updatedInventory) => {
-    const updatedList = this.state.mainInventoryList.map(item => {
-      if (item.id === this.state.selectedId) {
-        return {
-          ...item,
-          name: updatedInventory.name,
-          price: updatedInventory.price,
-          leftInStock: updatedInventory.leftInStock,
-          releaseDate: updatedInventory.releaseDate,
-          description: updatedInventory.description,
-          imgSrc: updatedInventory.imgSrc
-        };
-      }
-      return item;
-    });
+    dispatch(editItem(updatedInventory));
+    dispatch(setitemDetailVOPFalse());
 
-    this.setState({
-      mainInventoryList: updatedList,
-      itemDetailVOP: false
-    });
+    // const updatedList = this.state.mainInventoryList.map(item => {
+    //   if (item.id === this.state.selectedId) {
+    //     return {
+    //       ...item,
+    //       name: updatedInventory.name,
+    //       price: updatedInventory.price,
+    //       leftInStock: updatedInventory.leftInStock,
+    //       releaseDate: updatedInventory.releaseDate,
+    //       description: updatedInventory.description,
+    //       imgSrc: updatedInventory.imgSrc
+    //     };
+    //   }
+    //   return item;
+    // });
+
+    // this.setState({
+    //   mainInventoryList: updatedList,
+    //   itemDetailVOP: false
+    // });
   };
 
   const handleUpdateClick = (id) => {
@@ -69,19 +72,20 @@ const InventoryControl = () => {
   };
 
   const handleSellClick = (id) => {
-    const updatedList = this.state.mainInventoryList.map(item => {
-      if (item.id === id && item.leftInStock > 0) {
-        return {
-          ...item,
-          leftInStock: item.leftInStock - 1
-        };
-      }
-      return item;
-    });
+    dispatch(sellItem({ itemId: id}));
+    // const updatedList = this.state.mainInventoryList.map(item => {
+    //   if (item.id === id && item.leftInStock > 0) {
+    //     return {
+    //       ...item,
+    //       leftInStock: item.leftInStock - 1
+    //     };
+    //   }
+    //   return item;
+    // });
 
-    this.setState({
-      mainInventoryList: updatedList
-    });
+    // this.setState({
+    //   mainInventoryList: updatedList
+    // });
   };
 
   const handleReturnToInventoryClick = () => {
@@ -91,11 +95,14 @@ const InventoryControl = () => {
   }
 
   const handleDeleteItem = (itemId) => {
-    const updatedInventoryList = this.state.mainInventoryList.filter(item => item.id !== itemId);
-    this.setState({
-      mainInventoryList: updatedInventoryList,
-      itemDetailVOP: false,
-    });
+    console.log(itemId);
+    dispatch(deleteItem(itemId));
+    dispatch(setitemDetailVOPFalse())
+    // const updatedInventoryList = this.state.mainInventoryList.filter(item => item.id !== itemId);
+    // this.setState({
+    //   mainInventoryList: updatedInventoryList,
+    //   itemDetailVOP: false,
+    // });
   };
 
   let currentlyVisibleState = null;
@@ -115,8 +122,8 @@ const InventoryControl = () => {
     currentlyVisibleState = (
       <>
         <StockItemDetail
-          onItemEdit={this.handleEditingItem}
-          onDelete={this.handleDeleteItem}
+          onItemEdit={handleEditingItem}
+          onDelete={handleDeleteItem}
           selectedItemId={selectedId}
           selectedDetails={selectedItem}
         />
@@ -129,7 +136,7 @@ const InventoryControl = () => {
       <StockList
         handleUpdate={handleUpdateClick}
         itemsInStock={mainInventoryList}
-        handleSell={this.handleSellClick}
+        handleSell={handleSellClick}
       />
       <div className="bottom-button">
         <button onClick={handleNewItemClick}>New Stock Item</button>

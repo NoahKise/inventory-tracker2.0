@@ -38,7 +38,7 @@ const mainInventoryListSlice = createSlice({
         },
         sellItem: (state, action) => {
           const { itemId } = action.payload;
-          const itemToSell = state.mainInventoryList.find(item => item.id === itemId);
+          const itemToSell = state.find(item => item.id === itemId);
     
           if (itemToSell && itemToSell.leftInStock > 0) {
             itemToSell.leftInStock -= 1;
@@ -46,14 +46,15 @@ const mainInventoryListSlice = createSlice({
         },
         deleteItem: (state, action) => {
           const itemIdToDelete = action.payload;
-          state.mainInventoryList = state.mainInventoryList.filter(item => item.id !== itemIdToDelete);
+          console.log(itemIdToDelete);
+          state = state.filter(item => item.id !== itemIdToDelete);
         },
         editItem: (state, action) => {
           const updatedItem = action.payload;
-          const index = state.mainInventoryList.findIndex(item => item.id === updatedItem.id);
+          const index = state.findIndex(item => item.id === updatedItem.id);
     
           if (index !== -1) {
-            state.mainInventoryList[index] = updatedItem;
+            state[index] = updatedItem;
           }
         },
     }

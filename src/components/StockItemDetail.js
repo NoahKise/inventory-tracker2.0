@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 function StockItemDetail(props) {
   const { selectedItemId, selectedDetails } = props;
+  const itemId = props.selectedItemId;
   function handleStockItemDetailSubmission(e) {
     e.preventDefault();
-    const itemId = e.target.id.value;
     props.onItemEdit({
       name: e.target.name.value,
       price: e.target.price.value,
@@ -18,7 +18,7 @@ function StockItemDetail(props) {
   }
 
   function handleDeleteItem() {
-    props.onDelete(selectedItemId);
+    props.onDelete(itemId);
   }
 
   return (
