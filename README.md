@@ -7,6 +7,7 @@
 ## Technologies Used
 
 * React
+* Redux
 * HTML
 * CSS
 * JavaScript
