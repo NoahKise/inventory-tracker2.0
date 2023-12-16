@@ -112,7 +112,7 @@ h1 {
 }
 
 .description {
-  height: 236px;
+  height: 255px;
   overflow: scroll;
   background-color: rgb(44, 44, 44);
 }
