@@ -17,7 +17,7 @@ function StockItem({ name, price, releaseDate, imgSrc, leftInStock, description,
       <p><strong>{name} - {price}</strong></p>
       <p style={stockStyle}>Left in Stock: {leftInStock} {leftInStock < 11 && <span>**LOW STOCK ALERT**</span>}</p>
       <p><em>Release Date: {releaseDate}</em></p>
-      <p>{description}</p>
+      <p className="description">{description}</p>
       <button onClick={handleSell}>Sell One Unit</button>
       <button onClick={handleUpdateClick}>View/Edit Item Details</button>
       <hr />

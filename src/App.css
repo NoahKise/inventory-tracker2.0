@@ -105,3 +105,8 @@ h1 {
   margin-right: auto;
   margin-bottom: 4vw;
 }
+
+.description {
+  height: 236px;
+  overflow: scroll;
+}

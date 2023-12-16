@@ -1,9 +1,12 @@
 import React from "react";
+import '../Header.css'
 
 function Header() {
   return (
     <React.Fragment>
-      <h1>Noah's Magic The Gathering Store</h1>
+      <div id="header">
+      <h1 id="title">Noah's Magic The Gathering Store</h1>
+      </div>
     </React.Fragment>
   );
 }

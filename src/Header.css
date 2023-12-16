@@ -1,0 +1,14 @@
+#header {
+  padding-top: 20px;
+  background-image: url(../public/img/banner.jpeg);
+  padding-bottom: 40px;
+  margin-bottom: -8px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#title {
+  margin-top: -5px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
