@@ -95,6 +95,7 @@ const InventoryControl = () => {
         <button onClick={handleNewItemClick}>New Stock Item</button>
       </div>
     </>)
+
   return (
     <React.Fragment>
       {currentlyVisibleState}

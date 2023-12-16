@@ -58,14 +58,16 @@ function StockItemDetail(props) {
           <br></br>
           <label>Description:</label>
           <br></br>
+          <br></br>
           <textarea
-            rows="4" cols="50"
+            rows="14" cols="50"
             name='description'
             defaultValue={selectedDetails.description} />
           <br></br>
           <button type='submit'>Save Changes</button>
+          <button onClick={handleDeleteItem}>Delete Item</button>
         </form>
-        <button onClick={handleDeleteItem}>Delete Item</button>
+        
       </div>
     </React.Fragment>
   );

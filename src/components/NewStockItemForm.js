@@ -19,7 +19,7 @@ function NewStockItemForm(props) {
   return (
     <React.Fragment>
       <div className='input-form'>
-        <h2>Add New Item to Inventory</h2>
+        <h2>Adding New Item to Inventory</h2>
         <form onSubmit={handleNewStockItemFormSubmission}>
           <label>Name: </label>
           <input
@@ -53,7 +53,9 @@ function NewStockItemForm(props) {
           <br></br>
           <label>Description:</label>
           <br></br>
+          <br></br>
           <textarea
+          rows="14" cols="50"
             name='description'
             placeholder='Product Description' />
           <br></br>
