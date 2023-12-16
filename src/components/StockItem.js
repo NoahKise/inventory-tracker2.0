@@ -16,7 +16,7 @@ function StockItem({ name, price, releaseDate, imgSrc, pic2,leftInStock, descrip
       <img src={imgSrc} alt={name} />
       <img src={pic2} alt={name} />
       <p><strong>{name} - {price}</strong></p>
-      <p style={stockStyle}>Left in Stock: {leftInStock} {leftInStock < 11 && <span>**LOW STOCK ALERT**</span>}</p>
+      <p style={stockStyle}>Left in Stock: {leftInStock} {leftInStock < 11 && leftInStock > 0 && <span>**LOW STOCK ALERT**</span>}{leftInStock < 1 && <span>**SOLD OUT**</span>}</p>
       <p><em>Release Date: {releaseDate}</em></p>
       <p className="description">{description}</p>
       <button onClick={handleSell}>Sell One Unit</button>

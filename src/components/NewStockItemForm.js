@@ -44,13 +44,13 @@ function NewStockItemForm(props) {
           <input
             type='text'
             name='imgSrc'
-            placeholder='Image 1 Link' />
+            defaultValue='img/placeholder1.png' />
           <br></br>
           <label>Image 2 Source: </label>
           <input
             type='text'
             name='pic2'
-            placeholder='Image 2 Link' />
+            defaultValue='img/placeholder2.png' />
           <br></br>
           <label>Release Date: </label>
           <input
