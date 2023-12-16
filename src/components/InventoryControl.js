@@ -34,6 +34,7 @@ const InventoryControl = () => {
   };
 
   const handleEditingItem = (updatedInventory) => {
+    console.log(updatedInventory);
     dispatch(editItem(updatedInventory));
     dispatch(setItemDetailVOPFalse());
   };

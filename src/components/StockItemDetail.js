@@ -11,6 +11,7 @@ function StockItemDetail(props) {
       price: e.target.price.value,
       leftInStock: parseInt(e.target.leftInStock.value),
       imgSrc: e.target.imgSrc.value,
+      pic2: e.target.pic2.value,
       releaseDate: e.target.releaseDate.value,
       description: e.target.description.value,
       id: itemId
@@ -44,11 +45,17 @@ function StockItemDetail(props) {
             name="leftInStock"
             defaultValue={selectedDetails.leftInStock} />
           <br></br>
-          <label>Image Source: </label>
+          <label>Image 1 Source: </label>
           <input
             type='text'
             name='imgSrc'
             defaultValue={selectedDetails.imgSrc} />
+          <br></br>
+          <label>Image 2 Source: </label>
+          <input
+            type='text'
+            name='pic2'
+            defaultValue={selectedDetails.pic2} />
           <br></br>
           <label>Release Date: </label>
           <input

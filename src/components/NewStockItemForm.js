@@ -10,6 +10,7 @@ function NewStockItemForm(props) {
       price: e.target.price.value,
       leftInStock: parseInt(e.target.leftInStock.value),
       imgSrc: e.target.imgSrc.value,
+      pic2: e.target.pic2.value,
       releaseDate: e.target.releaseDate.value,
       description: e.target.description.value,
       id: v4()
@@ -39,11 +40,17 @@ function NewStockItemForm(props) {
             name="leftInStock"
             placeholder='1' />
           <br></br>
-          <label>Image Source: </label>
+          <label>Image 1 Source: </label>
           <input
             type='text'
             name='imgSrc'
-            placeholder='Image Link' />
+            placeholder='Image 1 Link' />
+          <br></br>
+          <label>Image 2 Source: </label>
+          <input
+            type='text'
+            name='pic2'
+            placeholder='Image 2 Link' />
           <br></br>
           <label>Release Date: </label>
           <input

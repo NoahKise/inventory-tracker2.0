@@ -8,6 +8,7 @@ function StockList(props) {
       <hr />
       {props.itemsInStock.map((item, index) =>
         <StockItem
+          pic2={item.pic2}
           imgSrc={item.imgSrc}
           name={item.name}
           price={item.price}
